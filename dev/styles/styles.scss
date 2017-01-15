@@ -148,7 +148,7 @@ footer{
         background-size: cover;
         background-position: 0px 50%;
         background-repeat:no-repeat;
-        min-height:10rem;
+        min-height: 10rem;
         min-height: 100vh;
         @media screen and (max-width:36em){
             background-image: url(../images/hero_bg_s.jpg);
@@ -191,7 +191,7 @@ footer{
         @media screen and (min-width:32em) and (max-width:72em){
             padding: .5rem 1rem;
             background-color:$white;
-            box-shadow: -.25rem .25rem 1rem transparentize($black,.5);
+            box-shadow: -.25rem .25rem 1rem transparentize($black,.75);
         }
         @media screen and (min-width:49em){
             padding-right:2em;

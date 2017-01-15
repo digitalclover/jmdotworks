@@ -23,7 +23,7 @@ app.locals.date = date.getFullYear();
 // GET Request Functions
 app.get('/', function(req,res,next){
     res.render('index', {
-        title: 'Joshua McCarthy | Web Development &amp; Interactive Design',
+        title: 'Joshua McCarthy | Web Development &amp; Interactive Design | Tokyo, Japan',
         id:'home',
     });
 });
