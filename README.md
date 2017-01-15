@@ -1,2 +1,2 @@
-# jmdotworks
-Repository of my online portfolio
+# Until It Works
+My Professional Development Blog

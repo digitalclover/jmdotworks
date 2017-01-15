@@ -1,0 +1,39 @@
+@import 'normalize';
+
+/* Color Profiles */
+$black:#18121e;
+$yellow:#eac67a;
+$white: lighten($yellow,27%);
+$red: #98434b;
+$green: #233237;
+
+/* Type Faces */
+$headline: fatfrank, Helvetica, Arial, Trebuchet MS, sans-serif;
+$body: rooney-web, Georgia, serif;
+
+/* Base Font Size */
+html,body{
+    font-size: 6vw;
+    background-color:$white;
+    background-image:url('../images/seigaiha.png');
+    color:$black;
+    font-family:$body;
+    @media screen and (min-width:24em){
+        font-size:16px;
+    }
+}
+
+/* Typography Mixins */
+@mixin headline{
+    font-family: $headline;
+    line-height: 1em;
+    font-weight: 400;
+}
+  
+@mixin body{ 
+    font-family:$body;
+    font-weight:400;
+    font-size: 1rem;
+    line-height: 1.3em;
+}
+

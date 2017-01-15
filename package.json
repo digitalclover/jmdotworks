@@ -1,0 +1,40 @@
+{
+  "name": "until-it-works",
+  "version": "1.0.0",
+  "description": "Professional web development blog of Joshua McCarthy",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalclover/Until-It-Works.git"
+  },
+  "author": "Joshua McCarthy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digitalclover/Until-It-Works/issues"
+  },
+  "homepage": "https://github.com/digitalclover/Until-It-Works#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "bower": "^1.8.0",
+    "es6-promise": "^4.0.5",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^1.0.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "imagemin-pngquant": "^5.0.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0"
+  }
+}
