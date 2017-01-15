@@ -141,14 +141,15 @@ footer{
     #home &{
         display:flex;
         align-items: flex-end;
+        align-content:flex-end;
         flex-wrap: wrap;
         background-image: url(../images/hero_bg_m.jpg);
-        background-size: 100% auto; //In case a browser doesn't support 'cover'
+        background-size: 100% auto;
         background-size: cover;
-        background-position: 0px 100%;
+        background-position: 0px 50%;
         background-repeat:no-repeat;
         min-height:10rem;
-        height: 100vh;
+        min-height: 100vh;
         @media screen and (max-width:36em){
             background-image: url(../images/hero_bg_s.jpg);
         }
@@ -162,20 +163,38 @@ footer{
     }
     h1{
         text-align:left;
-        color:$white; 
+        color:$white;
+        padding-top:1em;
+        text-shadow: .1em .1em .5em transparentize($black,.5);
+        @media screen and (min-width:30em){
+            padding-top:0;
+        }
     }
     p{
         text-align:left;
         color:$yellow;
-        text-shadow: .1em .1em .5em $black;
+        text-shadow: .1em .1em .5em transparentize($black,.5);
     }
     #contact{
-        position:absolute;
-        top:2rem;
-        right:2rem;
-        padding: .5rem 1rem;
-        @media screen and (min-width:49em) and (max-width:72em){
-            background-color:transparentize($white,.2);
+        width:90%;
+        display:block;
+        padding: 1rem 5%;
+        background-color:$white;
+        @media screen and (min-width:32em){
+            background-color:transparent;
+            position:absolute;
+            top:2rem;
+            right:2rem;
+            width:auto;
+            padding:0;
+        }
+        @media screen and (min-width:32em) and (max-width:72em){
+            padding: .5rem 1rem;
+            background-color:$white;
+            box-shadow: -.25rem .25rem 1rem transparentize($black,.5);
+        }
+        @media screen and (min-width:49em){
+            padding-right:2em;
         }
         p{
             color:$black;
@@ -206,9 +225,17 @@ footer{
     .project{
         margin:2rem 0;
         float:left;
+        width:100%;
         p{
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
             a{
                 color:$yellow;
+                
             }
         }
     }
@@ -224,17 +251,19 @@ footer{
         align-items: center;
         justify-content: space-between;
         li{
-            margin:2em 0;
             width: 100%;
             flex-basis:100%;
-            min-height:10em;
             float:left;
             display:flex;
             align-items:center;
+            @media screen and (min-width:20em){
+                margin:2em 0;
+                min-height:10em;
+            }
             &:before{
                 content:none;
             }
-            @media screen and (min-width:30em){
+            @media screen and (min-width:36em){
                 width:50%;
                 flex-basis:50%;
             }
@@ -246,36 +275,129 @@ footer{
                 width:25%;
                 flex-basis:25%;
             }
-            img{
-                display:block;
-                width:75%;
-                margin:0 auto;
-                transition:width .3s ease;
+            .img{
+                @media screen and (min-width:20em){
+                    text-indent:-1000em;
+                    background-image:url('../images/clients/sprite.png');
+                    background-size: 683px auto;
+                    background-repeat:no-repeat;
+                    display:block;
+                    margin:auto;
+                    &#laquinta{
+                        background-position: -204px -96px;
+                        height: 101px;
+                        width: 163px;
+                    } 
+                    &#shutterfly{
+                        background-position: -558px 1px;
+                        height: 126px;
+                        width: 125px;
+                    }
+                    &#whichwich{
+                        background-position: 0px 0px;
+                        height: 82px;
+                        width: 146px;
+                    }
+                    &#askdotcom{
+                        background-position: -427px -297px;
+                        height: 103px;
+                        width: 143px;
+                    }
+                    &#lund{
+                        background-position: 0px -233px;
+                        height: 56px;
+                        width: 198px;
+                    }
+                    &#spe{
+                        background-position: -345px 0px;
+                        height: 103px;
+                        width: 198px;
+                    }
+                    &#darling{
+                        background-position: -378px -195px;
+                        height: 49px;
+                        width: 182px;
+                    }
+                    &#santander{
+                        background-position: 0px -96px;
+                        height: 58px;
+                        width: 201px;
+                    }
+                    &#crystler{
+                        background-position: -215px -268px;
+                        height: 43px;
+                        width: 201px;
+                    }
+                    &#gm{
+                        background-position: 0px -305px;
+                        height: 31px;
+                        width: 202px;
+                    }
+                    &#davebusters{
+                        background-position: -561px -130px;
+                        height: 123px;
+                        width: 123px;
+                    }
+                    &#purina{
+                        background-position: -366px -106px;
+                        height: 35px;
+                        width: 191px;
+                    }
+                    &#askfm{
+                        background-position: -570px -257px;
+                        height: 125px;
+                        width: 97px;
+                    }
+                    &#iac{
+                        background-position: -203px -200px;
+                        height: 56px;
+                        width: 164px;
+                    }
+                    &#fluor{
+                        background-position: -377px -147px;
+                        height: 34px;
+                        width: 173px;
+                    }
+                    &#txuenergy{
+                        background-position: -160px -15px;
+                        height: 77px;
+                        width: 171px;
+                    }
+                    &#match{
+                        background-position: -422px -254px;
+                        height: 43px;
+                        width: 145px;
+                    }
+                    &#dictionary{
+                        background-position: 0 -340px;
+                        height: 45px;
+                        width: 203px;
+                    }
+                    &#rpm{
+                        background-position: 0 -154px;
+                        height: 77px;
+                        width: 201px;
+                    }
+                    &#ccs{
+                        background-position: -225px -313px;
+                        height: 71px;
+                        width: 116px;
+                    }
+                }
             }
             a{
                 width:100%;
+                margin:0 auto;
+                transition:transform .3s ease, filter .3s ease;
+                @media screen and (min-width:20em){
+                    width:75%;
+                }
                 @media screen and (min-width:48em){
                     filter: saturate(0);
-                    transition: filter .3s ease;
                 }
                 &:hover{
                     filter:saturate(1);
-                    img{
-                        width:80%;
-                    }
-                }
-            }
-            
-            &.tall{
-                img{
-                    width:45%;
-                }
-                a{
-                    &:hover{
-                        img{
-                            width:50%;
-                        }
-                    }
+                    transform:scale(1.2);
                 }
             }
         }
