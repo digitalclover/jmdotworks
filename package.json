@@ -1,6 +1,6 @@
 {
   "name": "until-it-works",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Professional web development blog of Joshua McCarthy",
   "main": "server.js",
   "scripts": {

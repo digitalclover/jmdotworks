@@ -28,7 +28,7 @@ gulp.task('watch', function() {
 gulp.task('styles', function(){
   gulp.src(['dev/styles/styles.scss'])
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+    //.pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
     .pipe(cssnano({zindex: false}))
     .pipe(rename(function (path) {
         path.extname = ".min.css"
