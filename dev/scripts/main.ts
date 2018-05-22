@@ -6,15 +6,17 @@ console.log("Thanks for visiting!")
 const page = document.getElementsByTagName('BODY')[0],
     topBtn = document.getElementById('scrollTop');
 
-page.onscroll = function(){
-    if(page.scrollTop > 300){
-        topBtn.classList.add('active');
-    }else{
-        topBtn.classList.remove('active');
-    }
-};
+if(topBtn !== null){
+    page.scroll = function(){
+            if(page.scrollTop > 300){
+                topBtn.classList.add('active');
+            }else{
+                topBtn.classList.remove('active');
+            }
+    };
 
-topBtn.onclick = function(){
-    page.scrollTop = 0;
-    topBtn.classList.remove('active');
-};
+    topBtn.onclick = function(){
+        page.scrollTop = 0;
+        topBtn.classList.remove('active');
+    };
+}
