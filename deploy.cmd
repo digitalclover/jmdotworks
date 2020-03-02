@@ -105,10 +105,18 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 
-:: 4. Run default gulp task
-IF EXIST "%DEPLOYMENT_TARGET%\gulpfile.js" (
+:: 4. Run npm build task
+IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
-  call :ExecuteCmd .\node_modules\.bin\gulp
+  call :ExecuteCmd !NPM_CMD! run build
+  IF !ERRORLEVEL! NEQ 0 goto error
+  popd
+)
+
+:: 4. Run tsc compile task
+IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
+  pushd "%DEPLOYMENT_TARGET%"
+  call :ExecuteCmd tsc server
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )

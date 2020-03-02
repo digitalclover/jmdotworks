@@ -127,13 +127,16 @@ footer{
     position:fixed;
     bottom: 10%;
     right: -4rem;
-    transform: rotate(120deg);
+    transform: rotate(120deg) scale3d(1,1,1);
     z-index:5;
     cursor:pointer;
     transition: right .3s ease, transform .3s ease-out;
     &.active{
         right:1rem;
-        transform: rotate(0deg);
+        transform: rotate(0deg) scale3d(1,1,1);
+    }
+    &:hover{
+        animation: bounce .3s ease-out forwards;
     }
 }
 
@@ -288,6 +291,7 @@ footer{
                     background-repeat:no-repeat;
                     display:block;
                     margin:auto;
+                    transform: scale3d(1,1,1);
                     &#laquinta.img{
                         background-position: -204px -96px;
                         height: 101px;
@@ -388,12 +392,22 @@ footer{
                         height: 71px;
                         width: 116px;
                     }
+                    &#goalous.img{
+                        background-position: 0px -384px;
+                        height: 40px;
+                        width: 160px;
+                    }
+                    &#liquid.img{
+                        background-position: -160px -388px;
+                        height: 32px;
+                        width: 134px;
+                    }
                 }
             }
             a{
                 width:100%;
                 margin:0 auto;
-                transition:transform .3s ease, filter .3s ease;
+                transition:filter .3s ease;
                 @media screen and (min-width:20em){
                     width:75%;
                 }
@@ -402,7 +416,7 @@ footer{
                 }
                 &:hover{
                     filter:saturate(1);
-                    transform:scale(1.2);
+                    animation: bounce .3s ease-out forwards;
                 }
             }
         }

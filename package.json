@@ -1,10 +1,16 @@
 {
-  "name": "until-it-works",
-  "version": "1.1.0",
+  "name": "jm-portfolio",
+  "version": "1.2.0",
   "description": "Professional web development blog of Joshua McCarthy",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dom": "node ./npm-scripts/dom.js",
+    "styles": "node ./npm-scripts/styles.js",
+    "scripts": "node ./npm-scripts/scripts.js",
+    "images": "node ./npm-scripts/images.js",
+    "pre": "node ./npm-scripts/pre.js",
+    "build": "npm run pre && npm run styles && npm run scripts && npm run images && npm run dom",
+    "fbuild": "node ./npm-scripts/build.js"
   },
   "repository": {
     "type": "git",
@@ -17,24 +23,19 @@
   },
   "homepage": "https://github.com/digitalclover/Until-It-Works#readme",
   "devDependencies": {
-    "autoprefixer": "^6.6.1",
-    "bower": "^1.8.0",
-    "es6-promise": "^4.0.5",
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-copy": "^1.0.0",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-imagemin": "^3.4.0",
-    "gulp-postcss": "^6.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.0.0",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.0",
-    "imagemin-pngquant": "^5.0.0"
+    "@types/node": "^13.7.7"
   },
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "ejs": "^2.5.5",
-    "express": "^4.14.0"
+    "autoprefixer": "^9.7.4",
+    "cssnano": "^4.1.10",
+    "ejs": "^3.0.1",
+    "handlebars": "^4.7.3",
+    "imagemin": "^7.0.1",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "node-sass": "^4.13.1",
+    "postcss": "^7.0.27",
+    "terser": "^4.6.4",
+    "typescript": "^3.8.3"
   }
 }
