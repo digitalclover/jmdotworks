@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/digitalclover/Until-It-Works.git"
+    "url": "git+https://github.com/digitalclover/jmdotworks.git"
   },
   "author": "Joshua McCarthy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/digitalclover/Until-It-Works/issues"
+    "url": "https://github.com/digitalclover/jmdotworks/issues"
   },
-  "homepage": "https://github.com/digitalclover/Until-It-Works#readme",
+  "homepage": "https://github.com/digitalclover/jmdotworks#readme",
   "devDependencies": {
     "@types/node": "^13.7.7"
   },
