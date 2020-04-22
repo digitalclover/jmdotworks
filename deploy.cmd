@@ -116,7 +116,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 :: 4. Run tsc compile task
 IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   pushd "%DEPLOYMENT_TARGET%"
-  call :ExecuteCmd tsc server
+  call :ExecuteCmd tsc
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )

@@ -4,13 +4,7 @@
   "description": "Professional web development blog of Joshua McCarthy",
   "main": "server.js",
   "scripts": {
-    "dom": "node ./npm-scripts/dom.js",
-    "styles": "node ./npm-scripts/styles.js",
-    "scripts": "node ./npm-scripts/scripts.js",
-    "images": "node ./npm-scripts/images.js",
-    "pre": "node ./npm-scripts/pre.js",
-    "build": "npm run pre && npm run styles && npm run scripts && npm run images && npm run dom",
-    "fbuild": "node ./npm-scripts/build.js"
+    "build": "node ./npm-scripts/build.js"
   },
   "repository": {
     "type": "git",
@@ -26,10 +20,16 @@
     "@types/node": "^13.7.7"
   },
   "dependencies": {
+    "@types/autoprefixer": "^9.7.2",
+    "@types/cssnano": "^4.0.0",
+    "@types/ejs": "^3.0.2",
+    "@types/imagemin": "^7.0.0",
+    "@types/imagemin-jpegtran": "^5.0.0",
+    "@types/node-sass": "^4.11.0",
     "autoprefixer": "^9.7.4",
     "cssnano": "^4.1.10",
     "ejs": "^3.0.1",
-    "handlebars": "^4.7.3",
+    "handlebars": "^4.7.6",
     "imagemin": "^7.0.1",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",

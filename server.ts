@@ -1,4 +1,5 @@
 // Imports
+import * as zlib from "zlib";
 import * as http from "http";
 import * as fs from "fs";
 import * as path from "path";
@@ -13,16 +14,51 @@ const server = http.createServer().listen(port, ()=>{
     }
 });
 
+
+const acceptsGzip = (request:http.IncomingMessage):boolean=>{
+    const accepts = request.headers['accept-encoding'];
+    if(accepts != undefined){
+        return accepts.includes('gzip') ? true : false;
+    }else{
+        return false;
+    }
+}
+
 server.on('request',(request:http.IncomingMessage, response:http.ServerResponse)=>{
     const path = `.${request.url}`;
-    console.log(`Requesting ${path}`);
+    console.log(path);
     if(path === './'){
         fs.readFile('./public/index.html', (err, data)=>{
             if(err){
                 response.writeHead(500);
                 response.end(`Internal server error`);
-            }else{
-                response.writeHead(200, {'Content-Type': 'text/html'});
+            }else if(acceptsGzip(request)){
+                response.writeHead(200, {'Content-Type': 'html', 'Content-Encoding': 'gzip'});
+                zlib.gzip(data, (err, res)=>{
+                    if(err) console.error(err);
+                    response.end(res, 'utf-8');
+                });
+            }
+            else{
+                response.writeHead(200, {'Content-Type': 'html'});
+                response.end(data, 'utf-8');
+            }
+
+        });
+    }else if(path === './favicon.ico'){
+        fs.readFile('./favicon.ico', (err, data)=>{
+            if(err){
+                response.writeHead(500);
+                response.end(`Internal server error`);
+            }else if(acceptsGzip(request)){
+                response.writeHead(200, {'Content-Type': 'png', 'Content-Encoding': 'gzip'});
+                zlib.gzip(data, (err, res)=>{
+                    if(err) console.error(err);
+                    response.end(res, 'utf-8');
+                });
+            }
+            else{
+                response.writeHead(200, {'Content-Type': 'png'});
                 response.end(data, 'utf-8');
             }
 
@@ -38,8 +74,17 @@ server.on('request',(request:http.IncomingMessage, response:http.ServerResponse)
             }else{
                 const type = fileParser(path);
                 if(type != false){
-                    response.writeHead(200, {'Content-Type': type});
-                    response.end(data, 'utf-8');
+                    if(acceptsGzip(request)){
+                        response.writeHead(200, {'Content-Type': type, 'Content-Encoding': 'gzip'});
+                        zlib.gzip(data, (err, res)=>{
+                            if(err) console.error(err);
+                            response.end(res, 'utf-8');
+                        });
+                    }
+                    else{
+                        response.writeHead(200, {'Content-Type': type});
+                        response.end(data, 'utf-8');
+                    }
                 }else{
                     response.writeHead(415, {'Content-Type': 'text/html'});
                     response.end('Unsupported Media Type', 'utf-8');
