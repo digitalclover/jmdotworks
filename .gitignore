@@ -34,7 +34,7 @@ node_modules
 
 # Compiled files
 public
-server.js
+*.js
 
 # IIS Config
 web.config
