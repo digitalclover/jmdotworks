@@ -34,7 +34,7 @@
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-pngquant": "^8.0.0",
     "node-sass": "^4.13.1",
-    "postcss": "^7.0.27",
+    "postcss": "^7.0.36",
     "terser": "^4.6.4",
     "typescript": "^3.8.3"
   }
